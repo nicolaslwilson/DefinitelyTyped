@@ -7105,7 +7105,7 @@ declare namespace Stripe {
     }
 
     interface IListPromise<T> extends Promise<IList<T>>, AsyncIterableIterator<T> {
-        autoPagingEach(handler: (item: T) => Promise<void>): void;
+        autoPagingEach(handler: (item: T) => Promise<void | false>): void;
         autoPagingToArray(opts: {limit: number}): Promise<T[]>;
     }
 
